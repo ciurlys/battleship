@@ -1,4 +1,4 @@
-export class Gameboard{
+class Gameboard{
     constructor(){
         this.gameboard = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -10,20 +10,22 @@ export class Gameboard{
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+        this.containedShips = [];
     }
 
 
-    placeShip(shipObject, startCoordinate, orientation){
+    placeShip(shipObject){
+        
         //finding the y(height) and x(length) coordinates and checking if the ship's length wouldn't cross the border and if no other ships are nearby
-        let y = startCoordinate[0];
-        let x = startCoordinate[1];
+        let y = shipObject.startCoordinates[0];
+        let x = shipObject.startCoordinates[1];
         
         let maximumY = y + shipObject.length;
         let maximumX = x + shipObject.length;
 
 
 
-        if(orientation == "horizontal"){
+        if(shipObject.orientation == "horizontal"){
         let pathIsClear = true;
 //Check if direct path is clear and if the surrounding is clear
 
@@ -37,12 +39,13 @@ export class Gameboard{
             }
 
             if(maximumX <= 10 && pathIsClear){
+                this.containedShips.push(shipObject);
                 for(let i = x; i < maximumX; i++){
                     this.gameboard[y][i] = 1;
                 }
             }
 //Placement changed according to orientation
-        }else if(orientation == "vertical"){
+        }else if(shipObject.orientation == "vertical"){
             let pathIsClear = true;
 
             for(let i = y; i <= maximumY; i++){
@@ -55,6 +58,7 @@ export class Gameboard{
             }
 
             if(maximumY <= 10 && pathIsClear){
+                this.containedShips.push(shipObject);
                 for(let i = y; i < maximumY; i++){
                     this.gameboard[i][x] = 1;
                 }
@@ -65,7 +69,6 @@ export class Gameboard{
         }
     }
 
-//TODO: RELATE SUCCESSFULLY ATTACKED SHIP ON GAMEBOARD WITH ORIGINAL SHIP OBJECT TO TRIGGER ITS HIT() METHOD
     receiveAttack(attackCoordinates){
 
         let y = attackCoordinates[0];
@@ -80,6 +83,29 @@ export class Gameboard{
         }else if(this.gameboard[y][x] == 1){
             console.log("A ship has been hit!");
             this.gameboard[y][x] = "X";
+            //We find the ship object to activate its hit() method;
+            
+            for(let ship of this.containedShips){
+                let yShipStart = ship.startCoordinates[0];
+                let xShipStart = ship.startCoordinates[1];
+
+                if(ship.orientation == "horizontal"){
+                    for(let i = xShipStart; i < (xShipStart+ship.length); i++){
+                        if(yShipStart === y && x === i){
+                            ship.hit();
+                        }
+                    }
+                }else if(ship.orientation == "vertical"){
+                    for(let j = yShipStart; j < (yShipStart + ship.length); j++){
+                        if(y === j && xShipStart === x){
+                            ship.hit();
+                        }
+                    }
+                }
+                
+
+            }
+
         }
 
         for(let i = 0; i < 10; i++){
