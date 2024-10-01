@@ -1,15 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Battleship</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div class="header-box"><h1>Battleship</h1></div>
 
+    <div class="gamebox">
+      <div class="player-one">
+        <table class="left-table">
+          <body class="left-body">
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">1&nbsp;&nbsp;A</td>
+              <td class="battlefield-cell">B</td>
+              <td class="battlefield-cell">C</td>
+              <td class="battlefield-cell">D</td>
+              <td class="battlefield-cell">E</td>
+              <td class="battlefield-cell">F</td>
+              <td class="battlefield-cell">G</td>
+              <td class="battlefield-cell">H</td>
+              <td class="battlefield-cell">I</td>
+              <td class="battlefield-cell">J</td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">2</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">3</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">4</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">5</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">6</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">7</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">8</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">9</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">10</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+          </body>
+        </table>
 
+        <div class="table-label">Your battlefield</div>
+        <button id="construct-fleet-button">Construct fleet</button>
 
-    
-</body>
+      </div>
+
+      <div class="player-two">
+        <table class="right-table">
+          <body>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">1&nbsp;&nbsp;A</td>
+              <td class="battlefield-cell">B</td>
+              <td class="battlefield-cell">C</td>
+              <td class="battlefield-cell">D</td>
+              <td class="battlefield-cell">E</td>
+              <td class="battlefield-cell">F</td>
+              <td class="battlefield-cell">G</td>
+              <td class="battlefield-cell">H</td>
+              <td class="battlefield-cell">I</td>
+              <td class="battlefield-cell">J</td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">2</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">3</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">4</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">5</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">6</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">7</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">8</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">9</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+            <tr class="battlefield-row">
+              <td class="battlefield-cell">10</td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+              <td class="battlefield-cell"></td>
+            </tr>
+          </body>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
