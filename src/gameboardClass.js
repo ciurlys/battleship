@@ -99,20 +99,20 @@ export class Gameboard {
       console.log("A ship has been hit!");
       this.gameboard[y][x] = "X";
       //We find the ship object to activate its hit() method;
-
       for (let ship of this.containedShips) {
         let yShipStart = ship.startCoordinates[0];
         let xShipStart = ship.startCoordinates[1];
 
-        if (ship.orientation == "horizontal") {
+
+        if (ship.orientation === "horizontal") {
           for (let i = xShipStart; i < xShipStart + ship.length; i++) {
-            if (yShipStart === y && x === i) {
+            if (yShipStart == y && x == i) {
               ship.hit();
             }
           }
-        } else if (ship.orientation == "vertical") {
-          for (let j = yShipStart; j < yShipStart + ship.length; j++) {
-            if (y === j && xShipStart === x) {
+        } else if (ship.orientation === "vertical") {
+          for (let j = yShipStart; j < (yShipStart + ship.length); j++) {
+            if (y == j && xShipStart == x) {
               ship.hit();
             }
           }
@@ -139,5 +139,6 @@ export class Gameboard {
 
   printGameboard() {
     console.log(this.gameboard);
+    return this.gameboard;
   }
 }
